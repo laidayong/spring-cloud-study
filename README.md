@@ -17,7 +17,7 @@
    3.1 启动两个eureka注册中心 
 
    java -jar microservice-discovery-eureka/target/microservice-discovery-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer1
-   java -jar microservice-discovery-eureka/target/microservice-discovery-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer1
+   java -jar microservice-discovery-eureka/target/microservice-discovery-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2
    注册中心通过如下url查看
    http://localhost:8761/
    http://localhost:8762/
