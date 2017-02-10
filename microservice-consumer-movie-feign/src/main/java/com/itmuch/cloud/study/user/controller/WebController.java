@@ -3,11 +3,18 @@ package com.itmuch.cloud.study.user.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.itmuch.cloud.study.user.entity.User;
 import com.itmuch.cloud.study.user.feign.UserFeignClient;
+import com.poc.pb.prtoco.src.EmployeeProto.Employee;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
