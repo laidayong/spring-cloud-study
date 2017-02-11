@@ -12,9 +12,6 @@ import com.itmuch.cloud.study.user.entity.User;
 import com.itmuch.cloud.study.user.feign.UserFeignClient;
 import com.poc.pb.prtoco.src.EmployeeProto.Employee;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

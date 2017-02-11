@@ -2,9 +2,6 @@ package com.itmuch.cloud.study.user.controller;
 
 import java.util.List;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -40,16 +38,14 @@ public class FeignController {
 	  return this.userFeignClient.getUsers();
   }
 
-	@POST
-	@Consumes("application/x-protobuf")
-	@RequestMapping(value="/createEmployee")
+	@RequestMapping(value="/createEmployee",method = RequestMethod.POST, consumes="application/x-protobuf")
 	public String createEmployee(@RequestBody Employee employee){
 		System.out.println( " printing the deserialized protobuf employee message " + employee.toString());
 		return "success";
 	}
 
-	@GET
-	@RequestMapping(value="/getEmployee")
+	
+	@RequestMapping(value="/getEmployee", method = RequestMethod.GET)
 	public @ResponseBody Employee getEmployee(){
 		//return new ResponseEntity<EmployeeProto.Employee>(
 				//Employee.newBuilder().setId(1).setFirstName("samrat").setSecondName("paul").build(), HttpStatus.OK);
