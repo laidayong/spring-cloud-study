@@ -7,9 +7,11 @@ import org.springframework.boot.web.servlet.ErrorPage;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.protobuf.ProtobufHttpMessageConverter;
 
+import com.itmuch.cloud.study.hmac.mock.MockUsers;
 import com.netflix.config.ConfigurationManager;
 
 /**
@@ -19,8 +21,10 @@ import com.netflix.config.ConfigurationManager;
 @SpringBootApplication
 @EnableFeignClients
 @EnableDiscoveryClient
+
 public class MovieFeignApplication {
   public static void main(String[] args) {
+	MockUsers.mock();
     SpringApplication.run(MovieFeignApplication.class, args);
   }
   
